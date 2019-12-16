@@ -1,27 +1,28 @@
 #!/usr/bin/env python3
-import os
+'''tmtest Ticktmaster Test validator for python3 code'''
 from termcolor import colored
 
-class tmTest():
+class TmTest():
+    '''read:   read the input
+       result: compare HAVE with WANT'''
 
-    def __init__(self):
-        pass
-
-    def read(self, input):
+    @staticmethod
+    def read(my_input):
         '''read an input example (i.e. ssh show command) and return
-        a list of splitlines() that can be use along the code.
-        The input can be can be a str() varibale as well as a file
-        (ideally under ./fixtures folder).'''
+           a list of splitlines() that can be use along the code.
+           The input can be can be a str() varibale as well as a file
+           (ideally under ./fixtures folder).'''
 
         input_list = list()
 
-        for line in input:
+        for line in my_input:
             input_list.append(line)
 
         return input_list
 
 
-    def result(self, want, have):
+    @staticmethod
+    def result(want, have):
         '''WANT: pass the file name (under ./fitures) containing the desired output.
                  The file is converted in a list splitted by lines.
            HAVE: pass the return of your code. This can be a list of splitted lines
@@ -36,7 +37,7 @@ class tmTest():
         for line in read_want:
             want_list.append(line)
 
-        if type(have) is 'list':
+        if isinstance(have, list):
             have_list = have
         else:
             for line in have:
@@ -65,10 +66,4 @@ class tmTest():
 
         return colored(return_want, color_w) + '\n' + colored(return_have, color_h)
 
-
-
-if __name__ == '__main__':
-    input = open('./fixtures/ssh_input', 'r')
-    a = tmTest()
-    have = open('./fixtures/have', 'r')
-    print(a.result('want', have))
+# f20191216
