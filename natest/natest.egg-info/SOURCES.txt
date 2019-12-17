@@ -1,6 +1,6 @@
 README.md
-natest
 setup.py
+natest/__init__.py
 natest.egg-info/PKG-INFO
 natest.egg-info/SOURCES.txt
 natest.egg-info/dependency_links.txt

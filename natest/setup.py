@@ -5,14 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
      name='natest',
-     version='0.2',
-     scripts=['natest'] ,
+     version='0.9',
      author="Federico Olivieri",
      author_email="lvrfrc87@gmail.com",
      description="python unit test for network automation code",
      long_description=long_description,
      long_description_content_type="text/markdown",
-     url="https://gitlab.com/networkAutomation/NaTest",
+     url="https://gitlab.com/networkAutomation/natest",
      packages=setuptools.find_packages(),
      install_requires=['termcolor',],
      classifiers=[
